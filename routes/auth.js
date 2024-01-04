@@ -22,7 +22,7 @@ router.get('/', async function (req, resp) {
             // save tokens in json file
             const jsonString = JSON.stringify(res.tokens, null, 2);
             const filePath = 'token.json';
-            fs.writeFile(filePath, jsonString);
+            fs.writeFileSync(filePath, jsonString);
             console.log('Write Success');
         } catch (err) {
             console.error('Error writing to file:', err);
